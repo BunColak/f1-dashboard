@@ -7,15 +7,30 @@ dependencies:
   clsx:
     specifier: ^1.2.1
     version: 1.2.1
+  country-flag-icons:
+    specifier: ^1.5.7
+    version: 1.5.7
+  country-flags-svg:
+    specifier: ^1.1.8
+    version: 1.1.8
+  i18n-nationality:
+    specifier: ^1.3.0
+    version: 1.3.0
   lucide-svelte:
     specifier: ^0.233.0
     version: 0.233.0(svelte@3.59.1)
+  radix-svelte:
+    specifier: ^0.7.1
+    version: 0.7.1(svelte@3.59.1)
   tailwind-merge:
     specifier: ^1.13.0
     version: 1.13.0
   tailwindcss-animate:
     specifier: ^1.0.5
     version: 1.0.5(tailwindcss@3.3.2)
+  zod:
+    specifier: ^3.21.4
+    version: 3.21.4
 
 devDependencies:
   '@sveltejs/adapter-auto':
@@ -317,6 +332,16 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
+  /@floating-ui/core@1.2.6:
+    resolution: {integrity: sha512-EvYTiXet5XqweYGClEmpu3BoxmsQ4hkj3QaYA6qEnigCWffTP3vNRwBReTdrwDwo7OoJ3wM8Uoe9Uk4n+d4hfg==}
+    dev: false
+
+  /@floating-ui/dom@1.2.9:
+    resolution: {integrity: sha512-sosQxsqgxMNkV3C+3UqTS6LxP7isRLwX8WMepp843Rb3/b0Wz8+MdUkxJksByip3C2WwLugLHN1b4ibn//zKwQ==}
+    dependencies:
+      '@floating-ui/core': 1.2.6
+    dev: false
+
   /@humanwhocodes/config-array@0.11.10:
     resolution: {integrity: sha512-KVVjQmNUepDVGXNuoRRdmmEjruj0KfiGSbS8LVc12LMsWDQzRXJ0qdhN8L8uUigKpfEHRhlaQFY0ib1tnUbNeQ==}
     engines: {node: '>=10.10.0'}
@@ -463,6 +488,10 @@ packages:
   /@types/cookie@0.5.1:
     resolution: {integrity: sha512-COUnqfB2+ckwXXSFInsFdOAWQzCCx+a5hq2ruyj+Vjund94RJQd4LG2u9hnvJrTgunKAaax7ancBYlDrNYxA0g==}
     dev: true
+
+  /@types/diacritics@1.3.1:
+    resolution: {integrity: sha512-tAH+RY51Zbz7ZSzN7yxQBKEue78U6weZ1UUBNjFoitoLbJGFJCKI7KVHwGsnYo4s2xSFr9KGEkjst2FolpYqyA==}
+    dev: false
 
   /@types/json-schema@7.0.12:
     resolution: {integrity: sha512-Hr5Jfhc9eYOQNPYO5WLDq/n4jqijdHNlDXjuAQkkt+mWdQR+XJToOHrsD4cPaMXpn6KO7y2+wM8AZEs8VpBLVA==}
@@ -795,6 +824,15 @@ packages:
     engines: {node: '>= 0.6'}
     dev: true
 
+  /country-flag-icons@1.5.7:
+    resolution: {integrity: sha512-AdvXhMcmSp7nBSkpGfW4qR/luAdRUutJqya9PuwRbsBzuoknThfultbv7Ib6fWsHXC43Es/4QJ8gzQQdBNm75A==}
+    dev: false
+
+  /country-flags-svg@1.1.8:
+    resolution: {integrity: sha512-ck/KoglQ1tU1d4nDN/8PEuGPeXmbCuWYu97MaHr5+p9VVYJZHgG/DYWAaOAnrYWkPn1GsAER/YlJvQGAnenJdg==}
+    engines: {node: ^12.17.0 || 13.x || 14.x || 15.x || 16.x || 17.x || 18.x}
+    dev: false
+
   /cross-spawn@7.0.3:
     resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
     engines: {node: '>= 8'}
@@ -838,6 +876,10 @@ packages:
   /devalue@4.3.2:
     resolution: {integrity: sha512-KqFl6pOgOW+Y6wJgu80rHpo2/3H07vr8ntR9rkkFIRETewbf5GaYYcakYfiKz89K+sLsuPkQIZaXDMjUObZwWg==}
     dev: true
+
+  /diacritics@1.3.0:
+    resolution: {integrity: sha512-wlwEkqcsaxvPJML+rDh/2iS824jbREk6DUMUKkEaSlxdYHeS43cClJtsWglvw2RfeXGm6ohKDqsXteJ5sP5enA==}
+    dev: false
 
   /didyoumean@1.2.2:
     resolution: {integrity: sha512-gxtyfqMg7GKyhQmb056K7M3xszy/myH8w+B4RT+QXBQsvAOdc3XymqDDPHx1BgPgsdAA5SIifona89YtRATDzw==}
@@ -1212,6 +1254,14 @@ packages:
     engines: {node: '>= 0.4.0'}
     dependencies:
       function-bind: 1.1.1
+
+  /i18n-nationality@1.3.0:
+    resolution: {integrity: sha512-Kl/rJVkJgufGdjST6OCmZAgw7zHyu9m9su6sfV1LK+bRX9H42KV+iKPai0Oq6mjiN+y35cYAv9GwVQjPAseIqg==}
+    engines: {node: '>= 6'}
+    dependencies:
+      '@types/diacritics': 1.3.1
+      diacritics: 1.3.0
+    dev: false
 
   /ignore@5.2.4:
     resolution: {integrity: sha512-MAb38BcSbH0eHNBxn7ql2NH/kX33OkB3lZ1BNdh7ENeRChHTYsTvWrMubiIAMNS2llXEEgZ1MUOBtXChP3kaFQ==}
@@ -1646,6 +1696,16 @@ packages:
 
   /queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
+
+  /radix-svelte@0.7.1(svelte@3.59.1):
+    resolution: {integrity: sha512-A6ZJK0uWqWYxIf6bAXs5R9r3Zf3e1ftLCqqWxVom4uIfADhmyC/cMvpDUAN19QqOcety02a5zwAT6RGf1CGWEg==}
+    peerDependencies:
+      svelte: ^3.58.0
+    dependencies:
+      '@floating-ui/core': 1.2.6
+      '@floating-ui/dom': 1.2.9
+      svelte: 3.59.1
+    dev: false
 
   /read-cache@1.0.0:
     resolution: {integrity: sha512-Owdv/Ft7IjOgm/i0xvNDZ1LrRANRfew4b2prF3OWMQLxLfu3bS8FVhCsrSCMK4lR56Y9ya+AThoTpDCTxCmpRA==}
@@ -2139,3 +2199,7 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
+
+  /zod@3.21.4:
+    resolution: {integrity: sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw==}
+    dev: false

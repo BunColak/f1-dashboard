@@ -2,4 +2,6 @@
 	import '../app.postcss';
 </script>
 
-<slot />
+<main class="container p-6">
+	<slot />
+</main>

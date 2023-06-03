@@ -1,14 +1,3 @@
-// See https://kit.svelte.dev/docs/types#app
-// for information about these interfaces
-declare global {
-	namespace App {
-		// interface Error {}
-		// interface Locals {}
-		// interface PageData {}
-		// interface Platform {}
-	}
-}
-
 declare module 'country-flags-svg' {
 	const countries: CountryData[];
 	const flagUrls: Record<string, string>;
@@ -27,5 +16,3 @@ declare module 'country-flags-svg' {
 		altSpellings: string[];
 	}
 }
-
-export {};
