@@ -150,7 +150,7 @@
 	</TableHeader>
 	<TableBody>
 		{#each data.currentSeason.MRData.RaceTable.Races as race}
-			<TableRow onClick={() => goto(`/race/${race.round}`)} class='cursor-pointer'>
+			<TableRow onClick={() => goto(`/races/${race.round}`)} class='cursor-pointer'>
 				<TableCell>
 					{race.raceName}
 				</TableCell>

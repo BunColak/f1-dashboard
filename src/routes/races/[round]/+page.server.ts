@@ -2,7 +2,7 @@ import { z } from "zod";
 import type { PageServerLoad } from "./$types";
 import { fastestResultsSchema, qualifyingResultsSchema, raceResultsSchema, roundDetailsSchema } from "$lib/schemas";
 
-const fetchRaceDetails = async (round: number) => {
+const fetchRaceDetails = async (round: number, svelteFetch: typeof fetch) => {
     const res = await fetch(`http://ergast.com/api/f1/current/${round}/results.json`, {
         headers: { "Content-Type": "application/json" },
     })
@@ -12,7 +12,7 @@ const fetchRaceDetails = async (round: number) => {
     return raceResultsSchema.parse(data);
 }
 
-const fetchRoundDetails = async (round: number) => {
+const fetchRoundDetails = async (round: number, svelteFetch: typeof fetch) => {
     const res = await fetch(`http://ergast.com/api/f1/current/${round}.json`, {
         headers: { "Content-Type": "application/json" },
     })
@@ -22,7 +22,7 @@ const fetchRoundDetails = async (round: number) => {
     return roundDetailsSchema.parse(data);
 }
 
-const fetchQualiDetails = async (round: number) => {
+const fetchQualiDetails = async (round: number, svelteFetch: typeof fetch) => {
     const res = await fetch(`http://ergast.com/api/f1/current/${round}/qualifying.json`, {
         headers: { "Content-Type": "application/json" },
     })
@@ -32,8 +32,8 @@ const fetchQualiDetails = async (round: number) => {
     return qualifyingResultsSchema.parse(data);
 }
 
-const fetchFastestLapDetails = async (round: number) => {
-    const res = await fetch(`http://ergast.com/api/f1/current/${round}/fastest/1/results.json`, {
+const fetchFastestLapDetails = async (svelteFetch: typeof fetch) => {
+    const res = await svelteFetch(`http://ergast.com/api/f1/current/fastest/1/results.json`, {
         headers: { "Content-Type": "application/json" },
     })
 
@@ -42,16 +42,16 @@ const fetchFastestLapDetails = async (round: number) => {
     return fastestResultsSchema.parse(data);
 }
 
-export const load: PageServerLoad = async ({ fetch, params }) => {
+export const load: PageServerLoad = async ({ params, fetch }) => {
     const round = z.coerce.number().parse(params.round);
 
-    const roundDetails = await fetchRoundDetails(round)
+    const roundDetails = await fetchRoundDetails(round, fetch)
 
-    const race = fetchRaceDetails(round)
+    const race = fetchRaceDetails(round, fetch)
 
-    const qualiDetails = fetchQualiDetails(round)
+    const qualiDetails = fetchQualiDetails(round, fetch)
 
-    const fastestLapDetails = fetchFastestLapDetails(round)
+    const fastestLapDetails = fetchFastestLapDetails(fetch)
 
     return {
         roundDetails,
