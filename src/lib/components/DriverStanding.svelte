@@ -19,7 +19,7 @@
 		<span class="">{constructorName}</span>
 	</div>
 	<div class="flex items-center justify-between">
-		<span class={cn('scroll-m-20 text-xl font-semibold tracking-tight whitespace-nowrap', { 'text-lg': small })}>
+		<span class={cn('scroll-m-20 text-xl font-semibold tracking-tight', { 'text-lg': small })}>
 			{name}
 		</span>
 		<span class={cn('scroll-m-20 text-2xl font-semibold tracking-tight', { 'text-xl': small })}

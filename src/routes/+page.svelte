@@ -42,10 +42,10 @@
 	<title>F1 Dashboard - Overview</title>
 </svelte:head>
 
-<div class="grid grid-cols-3 gap-6">
+<div class="grid lg:grid-cols-3 gap-6">
 	<Card.Card>
 		<Card.CardHeader>
-			<Card.CardTitle>Drivers</Card.CardTitle>
+			<Card.CardTitle>Drivers Championship</Card.CardTitle>
 		</Card.CardHeader>
 		<Card.CardContent>
 			<div>
@@ -78,7 +78,7 @@
 	</Card.Card>
 	<Card.Card>
 		<Card.CardHeader>
-			<Card.CardTitle>Constructors</Card.CardTitle>
+			<Card.CardTitle>Constructors Championship</Card.CardTitle>
 		</Card.CardHeader>
 		<Card.CardContent>
 			<div>
