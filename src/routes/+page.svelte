@@ -127,7 +127,7 @@
 				</h3>
 				<h3 class="scroll-m-20 text-lg font-semibold tracking-tight">
 					FL: {fastestLap.Driver.givenName}
-					{fastestLap.Driver.familyName} - {fastestLap.FastestLap.Time.time}
+					{fastestLap.Driver.familyName} - {fastestLap.FastestLap?.Time?.time}
 				</h3>
 			</div></Card.CardContent
 		>

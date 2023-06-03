@@ -2,8 +2,6 @@
 	import { page } from '$app/stores';
 	import { cn } from '$lib/utils';
 
-	console.log($page.route.id);
-
 	const routes = [
 		{ href: '/', label: 'Overview' },
 		{ href: '/races', label: 'Races' },
@@ -13,7 +11,7 @@
 </script>
 
 <div>
-	<ul class="flex space-x-8 text-lg font-medium">
+	<ul class="flex lg:space-x-8 space-x-4 text-lg font-medium">
 		{#each routes as route}
 			<li>
 				<a
